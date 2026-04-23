@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Rafting & Food Cetina"
+  description="Rafting adventures and food experiences in the Cetina region."
+>
+  <main class="hero">
+    <div class="hero__overlay"></div>
+    <section class="hero__content">
+      <p class="eyebrow">Astro starter</p>
+      <h1>Rafting & Food Cetina</h1>
+      <p class="lead">
+        A lightweight Astro foundation for a tourism website. We will shape this into
+        the full brand, pages, gallery, and SEO setup in the next steps.
+      </p>
+      <div class="actions">
+        <a href="mailto:info@raftingandfood.com" class="button button--primary">Send inquiry</a>
+        <a href="#next-steps" class="button button--ghost">See structure</a>
+      </div>
+    </section>
+  </main>
+
+  <section id="next-steps" class="section">
+    <div class="container">
+      <h2>Starter structure</h2>
+      <p>
+        This project is now ready for installation, Git push, and Cloudflare Pages
+        deployment.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Fast by default</h3>
+          <p>Astro generates static HTML, which is great for SEO and performance.</p>
+        </article>
+        <article class="card">
+          <h3>Easy to grow</h3>
+          <p>We can add pages, components, contact forms, and gallery sections step by step.</p>
+        </article>
+        <article class="card">
+          <h3>Cloudflare ready</h3>
+          <p>Use `npm run build` with `dist` as the output directory in Pages.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -392,6 +392,99 @@ h3 {
   margin-top: 2rem;
 }
 
+.reservation-panel {
+  background: linear-gradient(180deg, rgba(255, 252, 247, 0.92), rgba(250, 244, 236, 0.82));
+}
+
+.reservation-form {
+  margin-top: 1.75rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--muted);
+}
+
+.field span {
+  font-size: 0.93rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(27, 26, 24, 0.16);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--text);
+  font: inherit;
+  resize: vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 2px solid rgba(30, 106, 114, 0.25);
+  outline-offset: 2px;
+  border-color: rgba(30, 106, 114, 0.35);
+}
+
+.field--full {
+  grid-column: 1 / -1;
+}
+
+.field-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+}
+
+.form-note {
+  max-width: 34ch;
+  margin: 0;
+  font-size: 0.94rem;
+}
+
+.form-status {
+  min-height: 1.6rem;
+  margin: 1rem 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+.form-status[data-state="pending"] {
+  color: var(--accent-strong);
+}
+
+.form-status[data-state="success"] {
+  color: #1e6e42;
+}
+
+.form-status[data-state="error"] {
+  color: #8a2f2f;
+}
+
 .contact-item {
   display: flex;
   align-items: center;
@@ -427,6 +520,13 @@ h3 {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
 }
 
+.footer-meta {
+  margin: 1.25rem 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
 .footer-links {
   display: grid;
   align-content: start;
@@ -458,6 +558,10 @@ h3 {
 
   .grid--three,
   .grid--two {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
     grid-template-columns: 1fr;
   }
 

@@ -1,5 +1,7 @@
 ---
 import { navigation, siteName } from "../data/site";
+
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
@@ -11,6 +13,7 @@ import { navigation, siteName } from "../data/site";
         Placeholder brochure website for rafting adventures and food experiences on the
         Cetina. We will replace this text with your real brand story later.
       </p>
+      <p class="footer-meta">© {currentYear} Rafting and Food. All rights reserved.</p>
     </div>
 
     <div class="footer-links">

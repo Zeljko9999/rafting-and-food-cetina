@@ -1,48 +1,108 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionIntro from "../components/SectionIntro.astro";
+import { highlights, raftingPoints, foodPoints, faqItems } from "../data/site";
 ---
 
 <BaseLayout
-  title="Rafting & Food Cetina"
-  description="Rafting adventures and food experiences in the Cetina region."
+  title="Rafting & Food Cetina | River Adventure in Croatia"
+  description="Simple brochure website for rafting and food experiences in the Cetina region."
 >
-  <main class="hero">
-    <div class="hero__overlay"></div>
-    <section class="hero__content">
-      <p class="eyebrow">Astro starter</p>
-      <h1>Rafting & Food Cetina</h1>
-      <p class="lead">
-        A lightweight Astro foundation for a tourism website. We will shape this into
-        the full brand, pages, gallery, and SEO setup in the next steps.
-      </p>
-      <div class="actions">
-        <a href="mailto:info@raftingandfood.com" class="button button--primary">Send inquiry</a>
-        <a href="#next-steps" class="button button--ghost">See structure</a>
-      </div>
-    </section>
-  </main>
+  <PageHero
+    eyebrow="Cetina tourism website"
+    title="Rafting adventure and local food, presented with clarity."
+    lead="This home page introduces the main offer, key trust points, and the structure we will later upgrade with real photography, stronger copy, and booking-focused details."
+  />
 
-  <section id="next-steps" class="section">
+  <section class="section">
     <div class="container">
-      <h2>Starter structure</h2>
-      <p>
-        This project is now ready for installation, Git push, and Cloudflare Pages
-        deployment.
-      </p>
+      <SectionIntro
+        eyebrow="Home overview"
+        title="A clear first impression for visitors"
+        text="The reference websites all lead with adventure, trust, and practical details. This version keeps the same priorities, but in a cleaner and simpler structure."
+      />
 
-      <div class="grid">
-        <article class="card">
-          <h3>Fast by default</h3>
-          <p>Astro generates static HTML, which is great for SEO and performance.</p>
+      <div class="grid grid--three">
+        {highlights.map((item) => (
+          <article class="card">
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container split">
+      <div class="panel">
+        <p class="eyebrow">Rafting</p>
+        <h2>What the rafting page will communicate</h2>
+        <ul class="feature-list">
+          {raftingPoints.map((point) => (
+            <li>{point}</li>
+          ))}
+        </ul>
+        <a href="/rafting" class="button button--primary">Explore rafting</a>
+      </div>
+
+      <div class="panel">
+        <p class="eyebrow">Food experience</p>
+        <h2>What the food page will communicate</h2>
+        <ul class="feature-list">
+          {foodPoints.map((point) => (
+            <li>{point}</li>
+          ))}
+        </ul>
+        <a href="/food" class="button button--ghost">Explore food</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Simple process"
+        title="How visitors will move through the site"
+        text="This basic structure follows the same conversion logic as the reference sites: attraction first, then trust, then details, then inquiry."
+      />
+
+      <div class="timeline">
+        <article class="timeline__item">
+          <span class="timeline__step">01</span>
+          <h3>Discover the experience</h3>
+          <p>Home introduces rafting, food, location, and the overall feeling of the offer.</p>
         </article>
-        <article class="card">
-          <h3>Easy to grow</h3>
-          <p>We can add pages, components, contact forms, and gallery sections step by step.</p>
+        <article class="timeline__item">
+          <span class="timeline__step">02</span>
+          <h3>Review details</h3>
+          <p>Dedicated pages explain what is included, who it suits, and what to expect.</p>
         </article>
-        <article class="card">
-          <h3>Cloudflare ready</h3>
-          <p>Use `npm run build` with `dist` as the output directory in Pages.</p>
+        <article class="timeline__item">
+          <span class="timeline__step">03</span>
+          <h3>Send an inquiry</h3>
+          <p>Contact details and a lightweight message form will make it easy to reach you.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <SectionIntro
+        eyebrow="FAQ preview"
+        title="Common questions visitors usually ask"
+        text="This gives the home page a helpful summary while the full FAQ page can hold longer answers."
+      />
+
+      <div class="faq-list">
+        {faqItems.slice(0, 3).map((item) => (
+          <article class="faq-card">
+            <h3>{item.question}</h3>
+            <p>{item.answer}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>

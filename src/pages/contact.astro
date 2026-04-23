@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionIntro from "../components/SectionIntro.astro";
+import { contactDetails } from "../data/site";
+---
+
+<BaseLayout
+  title="Contact | Rafting & Food Cetina"
+  description="Contact and inquiry page for the Cetina tourism website."
+>
+  <PageHero
+    eyebrow="Contact"
+    title="A simple contact page with room for a future inquiry form."
+    lead="This page is ready for your contact details now, and later we can connect a real message form without adding a database."
+  />
+
+  <section class="section">
+    <div class="container split split--wide">
+      <div>
+        <SectionIntro
+          eyebrow="Get in touch"
+          title="Current contact structure"
+          text="We are using placeholder information for now. Later we can replace it with your real phone number, email, meeting point, and social links."
+        />
+
+        <div class="contact-list">
+          {contactDetails.map((item) => (
+            <article class="contact-item">
+              <span>{item.label}</span>
+              <strong>{item.value}</strong>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div class="panel">
+        <p class="eyebrow">Future form</p>
+        <h2>Message form comes later</h2>
+        <p>
+          In the next phase we can add a lightweight inquiry form with fields such as name,
+          email, preferred date, group size, and message.
+        </p>
+        <p>
+          That form can send directly to your inbox through a small service, with no
+          database needed.
+        </p>
+        <a href="mailto:info@raftingandfood.com" class="button button--primary">Email placeholder</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

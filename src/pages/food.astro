@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionIntro from "../components/SectionIntro.astro";
+import { foodPoints } from "../data/site";
+---
+
+<BaseLayout
+  title="Food Experience | Rafting & Food Cetina"
+  description="Placeholder food experience page for the Cetina tourism website."
+>
+  <PageHero
+    eyebrow="Food experience"
+    title="A local meal can become part of the full Cetina story."
+    lead="This page is reserved for your food concept, whether that means a traditional lunch after rafting, a tasting menu, or a combined local experience."
+  />
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <SectionIntro
+          eyebrow="Concept"
+          title="What this page should communicate"
+          text="The goal is to show that the experience is more than rafting alone. Food adds warmth, hospitality, and a memorable local identity."
+        />
+        <ul class="feature-list">
+          {foodPoints.map((point) => (
+            <li>{point}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="panel">
+        <p class="eyebrow">Placeholder story</p>
+        <h2>Simple, honest, and local</h2>
+        <p>
+          We will later add your real menu direction, setting, and dining format. For now,
+          this section gives the page the right structure for a future offer.
+        </p>
+        <p>
+          It can support private groups, family-friendly meals, or a relaxed post-rafting
+          gathering with regional flavors.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

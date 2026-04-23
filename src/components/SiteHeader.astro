@@ -1,0 +1,32 @@
+---
+import { navigation, siteName } from "../data/site";
+
+const pathname = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="/" class="brand">
+      <span class="brand__mark">RFC</span>
+      <span class="brand__text">{siteName}</span>
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      {navigation.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            "nav__link",
+            pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
+              ? "nav__link--active"
+              : ""
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <a href="/contact" class="button button--primary button--small">Send inquiry</a>
+  </div>
+</header>

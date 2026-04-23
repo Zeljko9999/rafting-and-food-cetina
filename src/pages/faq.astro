@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { faqItems } from "../data/site";
+---
+
+<BaseLayout
+  title="FAQ | Rafting & Food Cetina"
+  description="Frequently asked questions about the Cetina experience."
+>
+  <PageHero
+    eyebrow="FAQ"
+    title="Helpful answers before a guest gets in touch."
+    lead="A good FAQ reduces hesitation, improves trust, and answers the same questions people ask on most activity websites."
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="faq-list">
+        {faqItems.map((item) => (
+          <article class="faq-card faq-card--full">
+            <h3>{item.question}</h3>
+            <p>{item.answer}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

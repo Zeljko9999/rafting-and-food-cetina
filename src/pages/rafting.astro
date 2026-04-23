@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionIntro from "../components/SectionIntro.astro";
+import { raftingPoints } from "../data/site";
+---
+
+<BaseLayout
+  title="Rafting | Rafting & Food Cetina"
+  description="Placeholder rafting page for the Cetina tourism website."
+>
+  <PageHero
+    eyebrow="Rafting page"
+    title="Rafting on the Cetina with simple, convincing information."
+    lead="This page is prepared for your future real offer: route details, trip duration, safety information, what is included, and who the activity is best for."
+  />
+
+  <section class="section">
+    <div class="container split split--wide">
+      <div>
+        <SectionIntro
+          eyebrow="Experience"
+          title="What guests can expect"
+          text="Inspired by the reference sites, this section focuses on clarity rather than too much text. Later we can replace it with your exact program."
+        />
+        <ul class="feature-list">
+          {raftingPoints.map((point) => (
+            <li>{point}</li>
+          ))}
+        </ul>
+      </div>
+
+      <aside class="card card--summary">
+        <p class="eyebrow">Sample details</p>
+        <h3>Basic trip summary</h3>
+        <p>Duration: around 3 to 4 hours</p>
+        <p>Level: beginner to moderate</p>
+        <p>Audience: families, couples, groups</p>
+        <p>Meeting point: to be confirmed later</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Included"
+        title="What we can present on this page later"
+        text="This is where we will add your exact value proposition once you provide the final offer details."
+      />
+
+      <div class="grid grid--three">
+        <article class="card">
+          <h3>Equipment</h3>
+          <p>Helmet, buoyancy aid, paddle, and other essentials explained in a simple way.</p>
+        </article>
+        <article class="card">
+          <h3>Guides</h3>
+          <p>Licensed guide information, local knowledge, and safety-first communication.</p>
+        </article>
+        <article class="card">
+          <h3>Moments on the river</h3>
+          <p>Stops for swimming, photos, small jumps, or scenic breaks depending on the route.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

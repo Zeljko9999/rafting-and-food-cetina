@@ -1,0 +1,24 @@
+---
+import { navigation, siteName } from "../data/site";
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div>
+      <p class="eyebrow">Rafting & local hospitality</p>
+      <h2 class="footer-title">{siteName}</h2>
+      <p class="footer-copy">
+        Placeholder brochure website for rafting adventures and food experiences on the
+        Cetina. We will replace this text with your real brand story later.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      {navigation.map((item) => (
+        <a href={item.href} class="footer-links__item">
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</footer>

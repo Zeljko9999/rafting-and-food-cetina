@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionIntro from "../components/SectionIntro.astro";
+import { galleryNotes } from "../data/site";
+---
+
+<BaseLayout
+  title="Gallery | Rafting & Food Cetina"
+  description="Placeholder gallery page for rafting and food visuals."
+>
+  <PageHero
+    eyebrow="Gallery"
+    title="A visual page ready for your future photos and videos."
+    lead="For now this page defines the gallery structure. Later we will add real images, video clips, and stronger visual storytelling with background media."
+  />
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro
+        eyebrow="Media plan"
+        title="How the gallery will be organized"
+        text="The references rely heavily on visuals. We are keeping the layout simple now so we can add strong imagery later without rebuilding everything."
+      />
+
+      <div class="grid grid--two">
+        {galleryNotes.map((note, index) => (
+          <article class="gallery-placeholder">
+            <div class="gallery-placeholder__media">Media block {index + 1}</div>
+            <p>{note}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
